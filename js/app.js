@@ -27,10 +27,9 @@ function culadora(){
 // creamos los eventos clic para llevar los numeros  y operadores al display
 
 uno.onclick = function(){
-    if (display.textContent === 0 || display.textContent === "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "1";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "1";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "1";
     }
@@ -42,103 +41,120 @@ uno.onclick = function(){
     }
 }
 // validamos mediante el evento onclick
+
 dos.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "2";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "2";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "2";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "2";
     }
      else {
        display.textContent = display.textContent + "2";
     }
 }
 tres.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "3";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "3";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "3";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "3";
     }
      else {
        display.textContent = display.textContent + "3";
     }
 }
+
 cuatro.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "4";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "4";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "4";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "4";
     }
      else {
        display.textContent = display.textContent + "4";
     }
 }
 cinco.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "5";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "5";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "5";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "5";
     }
      else {
        display.textContent = display.textContent + "5";
     }
 }
 seis.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "6";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "6";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "6";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "6";
     }
      else {
        display.textContent = display.textContent + "6";
     }
 }
 siete.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "7";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "7";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "7";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "7";
     }
      else {
        display.textContent = display.textContent + "7";
     }
 }
 ocho.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "8";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "8";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "8";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "8";
     }
      else {
        display.textContent = display.textContent + "8";
     }
 }
 nueve.onclick = function(){
-    if (display.textContent == 0 || display.textContent == "." ) {
-      display.textContent = display.textConten ="";
-       display.textContent = display.textContent = "9";
-    }
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "9";
+  }
     else if (display.textContent != 0 && display.textContent != "." ) {
       display.textContent = display.textContent + "9";
+    }
+    else if (display.textContent !== 0 || display.textContent == ".") {
+      display.textContent = display.textContent = "9";
     }
      else {
        display.textContent = display.textContent + "9";
     }
 }
-
 cero.onclick = function(){
 
     if (display.textContent == 0 ) {
@@ -150,12 +166,12 @@ cero.onclick = function(){
 }
 
 punto.onclick = function(){
-    if (display.textContent == 0 ) {
-        display.textContent = display.textConten + ".";
+    if (display.textContent === 0 ) {
+        display.textContent = display.textContent + ".";
     }
-
-
-
+    if (display.textContent !== 0 ) {
+        display.textContent = display.textContent + ".";
+    }
 }
 
 on.onclick = function(){
