@@ -179,6 +179,7 @@ on.onclick = function(){
 }
 
 mas.onclick = function(){
+
   numero1 = display.textContent;
   operador = "suma";
     limpiar();
@@ -219,16 +220,32 @@ function resultado() {
   var nfinal = 0
   switch (operador) {
     case "suma":
+    if (numero1 % 1 == 0 && numero2 % 1 == 0 ) {
       nfinal = parseInt(numero1) + parseInt(numero2);
+    }else {
+      nfinal = parseFloat(numero1) + parseFloat(numero2);
+    }
       break;
     case "resta":
+    if (numero1 % 1 == 0 && numero2 % 1 == 0 ) {
       nfinal = parseInt(numero1) - parseInt(numero2);
+    }else {
+      nfinal = parseFloat(numero1) - parseFloat(numero2);
+    }
       break;
     case "multiplicacion":
-    nfinal = parseInt(numero1) * parseInt(numero2)
+    if (numero1 % 1 == 0 && numero2 % 1 == 0 ) {
+      nfinal = parseInt(numero1) * parseInt(numero2);
+    }else {
+      nfinal = parseFloat(numero1) * parseFloat(numero2);
+    }
       break;
     case "division":
-    nfinal = parseInt(numero1) / parseInt(numero2)
+    if (numero1 % 1 == 0 && numero2 % 1 == 0 ) {
+      nfinal = parseInt(numero1) / parseInt(numero2);
+    }else {
+      nfinal = parseFloat(numero1) / parseFloat(numero2);
+    }
       break;
   }
   reset();
