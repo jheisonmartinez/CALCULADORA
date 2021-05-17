@@ -2,7 +2,8 @@
 var numero1 = 0;
 var numeror2 = 0;
 var operador = "";
-
+var añade = "";
+var decim = 0;
 function culadora(){
   // se crean las variables para los botones
   var  display = document.getElementById('display');
@@ -128,7 +129,7 @@ siete.onclick = function(){
     }
 }
 ocho.onclick = function(){
-  if (display.textContent === "0.") {
+  if (display.textContent === "0." || display.textContent === "0.0" ) {
     display.textContent = display.textContent + "8";
   }
     else if (display.textContent != 0 && display.textContent != "." ) {
@@ -156,22 +157,23 @@ nueve.onclick = function(){
     }
 }
 cero.onclick = function(){
+  if (display.textContent === "0.") {
+    display.textContent = display.textContent + "0";
+  }
 
-    if (display.textContent == 0 ) {
-      display.textContent = display.textConten ="0";
+    if (display.textContent === 0 ) {
+      display.textContent = display.textConten + "0";
     }
-     else{
-       display.textContent = display.textContent + "0";
-    }
+    //  else{
+    //    display.textContent = display.textContent + "0";
+    // }
 }
 
 punto.onclick = function(){
-    if (display.textContent === 0 ) {
-        display.textContent = display.textContent + ".";
-    }
-    if (display.textContent !== 0 ) {
-        display.textContent = display.textContent + ".";
-    }
+  decimal();
+  if (añade == true){
+    display.textContent = display.textContent + ".";
+}
 }
 
 on.onclick = function(){
@@ -215,6 +217,18 @@ function reset(){
   numeror2 = 0;
   operacion ="";
 }
+function decimal(){
+  decim = display.textContent;
+if (decim == "0.") {
+  añade = false;
+} else if (decim % 1 == 0 ) {
+  añade = true;
+}
+else{
+    añade = false;
+}
+}
+
 
 function resultado() {
   var nfinal = 0
