@@ -4,8 +4,9 @@ var numeror2 = 0;
 var operador = "";
 var añade = "";
 var decim = 0;
+var negat = "";
 function culadora(){
-  // se crean las variables para los botones
+  // se crean las variables para interactuar con  los botones
   var  display = document.getElementById('display');
   var uno = document.getElementById('1');
   var dos = document.getElementById('2');
@@ -24,7 +25,7 @@ function culadora(){
   var  dividido = document.getElementById('dividido');
   var  igual = document.getElementById('igual');
   var  punto = document.getElementById('punto');
-
+  var sign = document.getElementById('sign');
 // creamos los eventos clic para llevar los numeros  y operadores al display
 
 uno.onclick = function(){
@@ -161,19 +162,20 @@ cero.onclick = function(){
     display.textContent = display.textContent + "0";
   }
 
-    if (display.textContent === 0 ) {
-      display.textContent = display.textConten + "0";
+    if (display.textContent === "0" ) {
+      display.textContent = display.textConten = "0";
     }
-    //  else{
-    //    display.textContent = display.textContent + "0";
-    // }
+     else if(display.textContent !== "0") {
+       display.textContent = display.textContent + "0";
+    }
 }
 
 punto.onclick = function(){
   decimal();
-  if (añade == true){
+  if (añade == true  ){
     display.textContent = display.textContent + ".";
 }
+
 }
 
 on.onclick = function(){
@@ -207,6 +209,18 @@ igual.onclick = function(){
   limpiar()
 resultado();
 }
+sign.onclick = function (){
+  negativos();
+  if( negat == true ){
+    display.textContent = "-" + display.textContent;
+  }
+  if( negat == false ){
+  display.textContent = display.textContent * -1;
+  }
+}
+
+
+// a continuacion creamos las funciones
 
 function limpiar(){
   display.textContent ="0";
@@ -218,20 +232,38 @@ function reset(){
   operacion ="";
 }
 function decimal(){
-  decim = display.textContent;
-if (decim == "0.") {
-  añade = false;
-} else if (decim % 1 == 0 ) {
-  añade = true;
-}
-else{
+
+decim = display.textContent;
+
+  if (decim % 1 == 0)  {
+    añade = true;
+  } if (decim % 1 !== 0)  {
     añade = false;
-}
+  } if (decim  === "1.")  {
+    añade = false;
+  }if (decim  === "2.")  {
+    añade = false;
+  }if (decim  === "3.")  {
+    añade = false;
+  }if (decim  === "4.")  {
+    añade = false;
+  }if (decim  ===  "5.")  {
+    añade = false;
+  }if (decim  === "6.")  {
+    añade = false;
+  }if (decim  === "7.")  {
+    añade = false;
+  }if (decim  === "8.")  {
+    añade = false;
+  }if (decim  === "9.")  {
+    añade = false;
+  }
 }
 
 
 function resultado() {
   var nfinal = 0
+  // a continuacion se evalua si el display contiene numeros enteros o decimales
   switch (operador) {
     case "suma":
     if (numero1 % 1 == 0 && numero2 % 1 == 0 ) {
@@ -264,5 +296,18 @@ function resultado() {
   }
   reset();
   display.textContent  =  nfinal;
+}
+
+function negativos(){
+
+var signo = display.textContent;
+
+if (signo % 1 == 0 || signo >= "0"){
+    negat = true;
+}
+if(signo < "0") {
+  negat = false;
+}
+
 }
 }
