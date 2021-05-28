@@ -5,7 +5,10 @@ var operador = "";
 var añade = "";
 var decim = 0;
 var negat = "";
+var num ="";
 function culadora(){
+
+
   // se crean las variables para interactuar con  los botones
   var  display = document.getElementById('display');
   var uno = document.getElementById('1');
@@ -29,22 +32,26 @@ function culadora(){
 // creamos los eventos clic para llevar los numeros  y operadores al display
 
 uno.onclick = function(){
-  if (display.textContent === "0.") {
-    display.textContent = display.textContent + "1";
-  }
-    else if (display.textContent != 0 && display.textContent != "." ) {
+  ncaracter();
+  if (num == true){
+    if (display.textContent === "0.") {
       display.textContent = display.textContent + "1";
     }
-    else if (display.textContent !== 0 || display.textContent == ".") {
-      display.textContent = display.textContent = "1";
-    }
-     else {
-       display.textContent = display.textContent + "1";
-    }
+      else if (display.textContent != 0 && display.textContent != "." ) {
+        display.textContent = display.textContent + "1";
+      }
+      else if (display.textContent !== 0 || display.textContent == ".") {
+        display.textContent = display.textContent = "1";
+      }
+       else {
+         display.textContent = display.textContent + "1";
+      }
+      }
 }
-// validamos mediante el evento onclick
 
 dos.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "2";
   }
@@ -58,7 +65,10 @@ dos.onclick = function(){
        display.textContent = display.textContent + "2";
     }
 }
+}
 tres.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "3";
   }
@@ -72,8 +82,10 @@ tres.onclick = function(){
        display.textContent = display.textContent + "3";
     }
 }
-
+}
 cuatro.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "4";
   }
@@ -87,7 +99,10 @@ cuatro.onclick = function(){
        display.textContent = display.textContent + "4";
     }
 }
+}
 cinco.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "5";
   }
@@ -101,7 +116,10 @@ cinco.onclick = function(){
        display.textContent = display.textContent + "5";
     }
 }
+}
 seis.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "6";
   }
@@ -115,7 +133,10 @@ seis.onclick = function(){
        display.textContent = display.textContent + "6";
     }
 }
+}
 siete.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "7";
   }
@@ -129,7 +150,10 @@ siete.onclick = function(){
        display.textContent = display.textContent + "7";
     }
 }
+}
 ocho.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0." || display.textContent === "0.0" ) {
     display.textContent = display.textContent + "8";
   }
@@ -143,7 +167,10 @@ ocho.onclick = function(){
        display.textContent = display.textContent + "8";
     }
 }
+}
 nueve.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "9";
   }
@@ -157,7 +184,10 @@ nueve.onclick = function(){
        display.textContent = display.textContent + "9";
     }
 }
+}
 cero.onclick = function(){
+  ncaracter();
+  if (num == true){
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "0";
   }
@@ -169,7 +199,7 @@ cero.onclick = function(){
        display.textContent = display.textContent + "0";
     }
 }
-
+}
 punto.onclick = function(){
   decimal();
   if (añade == true  ){
@@ -295,19 +325,28 @@ function resultado() {
       break;
   }
   reset();
+  ncaracter();
+  if (num == true){
   display.textContent  =  nfinal;
+}
 }
 
 function negativos(){
-
 var signo = display.textContent;
-
 if (signo % 1 == 0 || signo >= "0"){
     negat = true;
 }
 if(signo < "0") {
   negat = false;
 }
-
 }
+ function ncaracter(){
+   if (display.textContent.length <= 7)
+   num = true;
+   else {
+     num = false;
+   }
+
+ }
+
 }
