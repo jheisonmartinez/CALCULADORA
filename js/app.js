@@ -6,6 +6,8 @@ var añade = "";
 var decim = 0;
 var negat = "";
 var num ="";
+var ref = 0;
+var btn = "";
 function culadora(){
 
 
@@ -31,6 +33,9 @@ function culadora(){
   var sign = document.getElementById('sign');
 // creamos los eventos clic para llevar los numeros  y operadores al display
 
+
+
+
 uno.onclick = function(){
   ncaracter();
   if (num == true){
@@ -47,6 +52,8 @@ uno.onclick = function(){
          display.textContent = display.textContent + "1";
       }
       }
+
+
 }
 
 dos.onclick = function(){
@@ -67,6 +74,7 @@ dos.onclick = function(){
 }
 }
 tres.onclick = function(){
+  cambio();
   ncaracter();
   if (num == true){
   if (display.textContent === "0.") {
@@ -188,16 +196,16 @@ nueve.onclick = function(){
 cero.onclick = function(){
   ncaracter();
   if (num == true){
+
+  if (display.textContent === "0" ) {
+    display.textContent = display.textConten = "0";
+  }
   if (display.textContent === "0.") {
     display.textContent = display.textContent + "0";
   }
-
-    if (display.textContent === "0" ) {
-      display.textContent = display.textConten = "0";
-    }
-     else if(display.textContent !== "0") {
-       display.textContent = display.textContent + "0";
-    }
+  if(display.textContent !== "0.0") {
+     display.textContent = display.textContent + "0";
+  }
 }
 }
 punto.onclick = function(){
@@ -287,7 +295,9 @@ decim = display.textContent;
     añade = false;
   }if (decim  === "9.")  {
     añade = false;
-  }
+  }if (decim  === "0.")  {
+  añade = false;
+}
 }
 
 
@@ -346,7 +356,12 @@ if(signo < "0") {
    else {
      num = false;
    }
-
  }
-
+function cambio(){
+  btn = document.getElementsByClassName('tecla')
+  btn.addEventListener('click',alerta);
+}
+function alerta(){
+  alert('hola');
+}
 }
